@@ -1,41 +1,27 @@
-from turtle import Turtle, Screen
-from random import choice
+import turtle as t
+import random
 
-turtle = Turtle()
-turtle.shape("square")
-turtle.color("blue")
+turtule = t.Turtle()
+t.shape("square")
+t.color("blue")
+t.colormode(255)
 
-movement = {
-    "forward": "fw"
-    
-}
+def random_colors():
+    r = random.randint(0 , 255)
+    b = random.randint(0 , 255)
+    g = random.randint(0 , 255)
+    color = (r ,g , b)
+    return color
+directions = [0 , 90 , 180 , 270]
 
-
-
-
-
-
-
-
-# This part of the code is to progressively draw a higher number of sided shape
-
-#color_of_turtle = ["blue" , "red" , "green"]
-
-#def draw_shape(num_sides):
-#    angel = 360 / num_sides
-#    for i in range(num_sides):
-#       turtle.right(angel)
-        
-
-#for i in range(3 , 11):
-#    turtle.color(choice(color_of_turtle))
-#    draw_shape(i)
-
-    
+t.pensize(15)
+t.speed(8)
+for i in range(200):
+    t.forward(30)
+    t.setheading(random.choice(directions))
+    t.color(random_colors())
     
 
-
-
-screen = Screen()
+screen = t.Screen()
 screen.exitonclick()
 
